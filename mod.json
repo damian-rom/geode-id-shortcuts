@@ -1,0 +1,68 @@
+{
+	"geode": "5.7.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "darius.id-shortcuts",
+	"name": "ID Shortcuts",
+	"version": "v1.0.0",
+	"developer": "iIDariusIi",
+	"description": "Turns IDs written in comments, messages or descriptions into clickable shortcuts.",
+	"dependencies": {
+		"geode.node-ids": ">=v1.23.3"
+	},
+	"tags": ["interface", "enhancement", "online"],
+	"settings": {
+		"enabled": {
+			"name": "Enable ID shortcuts",
+			"description": "Highlight IDs in comments, messages and descriptions. Turn off if you want to disable this without restarting the game.",
+			"type": "bool",
+			"default": true
+		},
+		"shortcut-color": {
+			"name": "Shortcut color",
+			"description": "Color applied to IDs found.",
+			"type": "rgb",
+			"default": "#5AAFF0"
+		},
+		"id-target": {
+			"name": "Treat IDs as",
+			"description": "Lets you decide whether the ID you clicked is for a level or a list, or always treat them as one of the two.",
+			"type": "string",
+			"default": "Ask",
+			"one-of": ["Ask", "Level", "List"]
+		},
+		"require-ctrl": {
+			"name": "Require Ctrl to open",
+			"description": "Only open the level when Ctrl (Cmd on macOS) is held while clicking. Off by default on mobile.",
+			"type": "bool",
+			"default": {
+				"win": true,
+				"mac": true,
+				"android": false,
+				"ios": false
+			}
+		},
+		"min-digits": {
+			"name": "Minimum digits",
+			"description": "How many digits a number needs for it to count as an ID.",
+			"type": "int",
+			"default": 5,
+			"min": 3,
+			"max": 9,
+			"control": {
+				"slider": true,
+				"input": true
+			}
+		},
+		"debug-mode": {
+			"name": "Debug mode",
+			"description": "Draws the clickable areas in red and writes detailed logs. The logs include the text being scanned, so leave this off unless you are diagnosing something.",
+			"type": "bool",
+			"default": false
+		}
+	}
+}
